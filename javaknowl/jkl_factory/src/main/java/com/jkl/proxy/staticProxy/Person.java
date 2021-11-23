@@ -1,4 +1,4 @@
-package com.jkl.proxy;
+package com.jkl.proxy.staticProxy;
 
 public interface Person {
 
