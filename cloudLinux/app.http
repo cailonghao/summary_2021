@@ -1,0 +1,10 @@
+### Send POST request with body as parameters
+POST http://localhost:32000/redis/setRedis
+Content-Type: application/x-www-form-urlencoded
+
+key=key1&value=key1-value
+### Send POST request with body as parameters
+POST http://localhost:32000/redis/getRedis
+Content-Type: application/x-www-form-urlencoded
+
+key=key1

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="1.13.253.101" id="8bb00bf6-2110-4580-a377-50e4751d9a22" keyPath="C:\work\ssh\clh.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
+    </configs>
+  </component>
+</project>
