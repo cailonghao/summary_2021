@@ -1,11 +1,3 @@
-server:
-  port: 32000
 spring:
-  application:
-    name: dubbo-consumer
-dubbo:
-  protocol:
-    name: dubbo
-    port: 12345
-  registry:
-    address: zookeeper://1.13.253.101:2181
+  profiles:
+    active: dev

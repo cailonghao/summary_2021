@@ -2,13 +2,13 @@ server:
   port: 30000
 spring:
   application:
-    name: dubbo-provider
+    name: dubbo_aaa
 dubbo:
   scan:
     base-packages: com.dubbo.provider.service
   protocol:
+    port: 30001
     name: dubbo
-    port: 20880
   registry:
     address: zookeeper://1.13.253.101:2181
   application:
