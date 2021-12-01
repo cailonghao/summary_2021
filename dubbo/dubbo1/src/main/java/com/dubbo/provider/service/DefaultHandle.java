@@ -1,14 +1,11 @@
 package com.dubbo.provider.service;
 
+import com.dubbo.provider.ProviderApp;
 import com.dubbo.provider.vo.ImMessage;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.*;
 import io.netty.handler.codec.http.DefaultFullHttpResponse;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpResponseStatus;
@@ -18,6 +15,7 @@ import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Date;
+import java.util.UUID;
 
 import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
 
@@ -40,7 +38,7 @@ public class DefaultHandle extends SimpleChannelInboundHandler<Object> {
         }
     }
 
-    private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) throws JsonProcessingException {
+    private void handlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame frame) {
         // 判断是否关闭链路的指令
         if (frame instanceof CloseWebSocketFrame) {
             handshaker.close(ctx.channel(), (CloseWebSocketFrame) frame.retain());
@@ -62,16 +60,42 @@ public class DefaultHandle extends SimpleChannelInboundHandler<Object> {
         String text = ((TextWebSocketFrame) frame).text();
         log.info("服务端收到：" + text);
         ObjectMapper mapper = new ObjectMapper();
-        ImMessage imMessage = mapper.readValue(text, ImMessage.class);
-        if("login".equals(imMessage.getMsgType())){
-
+        try {
+            RedisService redisService = ProviderApp.ctx.getBean(RedisService.class);
+            ImMessage im = mapper.readValue(text, ImMessage.class);
+            if (redisService.hasUser(im.getUuid())) {
+                //注册进redis 发布登录消息
+                redisService.sendTopMessage(text);
+                //绑定channel
+                redisService.addChannel(im.getSend(), ctx.channel().id().asShortText());
+                ChannelSupervise.addChannel(ctx.channel());
+                //创建链接列表
+                redisService.addSendLineAccept(String.valueOf(im.getSend()),String.valueOf(im.getAccept()));
+                redisService.addSendLineAccept(String.valueOf(im.getAccept()),String.valueOf(im.getSend()));
+                //存放消息
+                redisService.addFangjianMsg(String.valueOf(im.getSend()),String.valueOf(im.getAccept()), text);
+            } else {
+                ctx.channel().writeAndFlush("验证失败");
+                handshaker.close(ctx.channel(), (CloseWebSocketFrame) frame.retain());
+            }
+        } catch (Exception e) {
+            log.error("解析json失败 e= {}", e.getMessage());
         }
-        TextWebSocketFrame tws = new TextWebSocketFrame(new Date().toString()
-                + ctx.channel().id() + "：" + text);
+//        TextWebSocketFrame tws = new TextWebSocketFrame(new Date().toString()
+//                + ctx.channel().id() + "：" + text);
         // 群发
         //ChannelSupervise.send2All(tws);
         // 返回【谁发的发给谁】
-        ctx.channel().writeAndFlush(tws);
+        //ctx.channel().writeAndFlush(tws);
+        //System.out.println("毒害亲肤");
+//        ctx.channel().writeAndFlush(new TextWebSocketFrame("sadsd"));
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("channel 关闭");
+        ChannelSupervise.removeChannel(ctx.channel());
+        super.channelInactive(ctx);
     }
 
     /**
