@@ -1,0 +1,17 @@
+server:
+  port: 32000
+spring:
+  application:
+    name: dubbo2-dev
+dubbo:
+  scan:
+    base-packages: com.dubbo.dub2.service
+  protocol:
+    port: 30002
+    name: dubbo
+  registry:
+    address: zookeeper://1.13.253.101:2181
+  application:
+    version: 1.0.0
+  consumer:
+    check: false

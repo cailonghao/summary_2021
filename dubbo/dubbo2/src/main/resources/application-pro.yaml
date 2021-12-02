@@ -1,0 +1,17 @@
+server:
+  port: 42000
+spring:
+  application:
+    name: dubbo2-pro
+dubbo:
+  scan:
+    base-packages: com.dubbo.dub2.service
+  protocol:
+    port: 40002
+    name: dubbo
+  registry:
+    address: zookeeper://1.13.253.101:2181
+  application:
+    version: 1.0.0
+  consumer:
+    check: false

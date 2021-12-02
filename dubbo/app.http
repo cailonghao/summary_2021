@@ -1,0 +1,10 @@
+### Send POST request with body as parameters
+POST http://localhost:30000/index/imLogin
+Content-Type: application/x-www-form-urlencoded
+
+username=999&password=content
+### Send POST request with body as parameters
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+
+id=999&value=content

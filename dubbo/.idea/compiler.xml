@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dubbo1" />
-        <module name="dubbo2" />
         <module name="api" />
+        <module name="dubbo4" />
+        <module name="dubbo3" />
+        <module name="dubbo2" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +20,8 @@
       <module name="api" options="-parameters" />
       <module name="dubbo1" options="-parameters" />
       <module name="dubbo2" options="-parameters" />
+      <module name="dubbo3" options="-parameters" />
+      <module name="dubbo4" options="-parameters" />
     </option>
   </component>
 </project>

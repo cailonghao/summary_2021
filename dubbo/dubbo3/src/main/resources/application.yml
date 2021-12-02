@@ -1,0 +1,18 @@
+server:
+  port: 34000
+spring:
+  application:
+    name: dubbo-dubbo3
+dubbo:
+  protocol:
+    port: 30004
+    name: dubbo
+  scan:
+    base-packages: com.dubbo.dub3.service
+  registry:
+    address: zookeeper://1.13.253.101:2181
+  application:
+    version: 1.0.0
+  consumer:
+    check: false
+    loadbalance: roundrobin

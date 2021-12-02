@@ -2,20 +2,14 @@ package com.dubbo.provider.vo;
 
 import lombok.Data;
 
-@Data
-public class ImMessage {
+import java.io.Serializable;
 
-    /**
-     * 类型 login normal
-     */
-    private String msgType;
-    /**
-     * 消息userId
-     */
-    private Long msgUserId;
-    /**
-     * 平台
-     */
-    private Integer msgPlat;
+@Data
+public class ImMessage implements Serializable {
+
+    private String uuid;
+    private String send;
+    private String accept;
+    private String msg;
 
 }

@@ -12,6 +12,8 @@
         <module>dubbo1</module>
         <module>dubbo2</module>
         <module>api</module>
+        <module>dubbo3</module>
+        <module>dubbo4</module>
     </modules>
 
     <parent>
@@ -76,5 +78,6 @@
             <version>4.2.0</version>
         </dependency>
     </dependencies>
+
 
 </project>
