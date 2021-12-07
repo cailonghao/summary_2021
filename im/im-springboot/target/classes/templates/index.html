@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+<div id="body">
+    <div><strong>账 户:</strong><input value="" name="username"></div>
+    <div><strong>密 码:</strong><input value="" name="username"></div>
+    <div id="button">登录</div>
+    <div id="websocket"></div>
+</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        let ws;
+        if ("WebSocket" in window) {
+            $("#websocket").text("您的浏览器支持WebSocket")
+        } else {
+            $("#websocket").text("您的浏览器不支持WebSocket")
+        }
+        $("#button").click(function (){
+            window.location.href="/page/talk";
+        })
+    })
+</script>
+<style>
+    #body {
+        position: absolute;
+        left: 30%;
+        top: 30%;
+        height: 25%;
+        width: 40%;
+        background-color: deepskyblue;
+    }
+
+    div {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    input {
+        height: 25px;
+    }
+    #button{
+        background-color:sandybrown;
+        height: 35px;
+    }
+    #websocket{
+        font-size: 10px;
+    }
+</style>
+</html>
