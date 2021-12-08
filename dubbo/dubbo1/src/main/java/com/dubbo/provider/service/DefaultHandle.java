@@ -64,6 +64,10 @@ public class DefaultHandle extends SimpleChannelInboundHandler<Object> {
             RedisService redisService = ProviderApp.ctx.getBean(RedisService.class);
             ImMessage im = mapper.readValue(text, ImMessage.class);
             if (redisService.hasUser(im.getUuid())) {
+                //检查本地注册表
+
+
+
                 //注册进redis 发布登录消息
                 redisService.sendTopMessage(text);
                 //绑定channel
@@ -140,6 +144,14 @@ public class DefaultHandle extends SimpleChannelInboundHandler<Object> {
         if (!isKeepAlive(req) || res.status().code() != 200) {
             f.addListener(ChannelFutureListener.CLOSE);
         }
+    }
+
+
+    private static Boolean localCache(String uuid){
+        if(ChannelSupervise.findChannel(uuid)!=null){
+            return true;
+        }
+        return false;
     }
 
 
