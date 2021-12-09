@@ -7,6 +7,7 @@
 </head>
 <body>
 <div id="body">
+    <div th:text="${port}" style="font-size: 8px"></div>
     <div><strong>账 户:</strong><input value="" name="username"></div>
     <div><strong>密 码:</strong><input value="" name="username"></div>
     <div id="button">登录</div>
@@ -16,14 +17,16 @@
 </body>
 <script>
     $(document).ready(function () {
-        let ws;
         if ("WebSocket" in window) {
             $("#websocket").text("您的浏览器支持WebSocket")
         } else {
             $("#websocket").text("您的浏览器不支持WebSocket")
         }
-        $("#button").click(function (){
-            window.location.href="/page/talk";
+        $("#button").click(function () {
+            $.post("",function (res){
+
+            })
+            window.location.href = "/page/talk";
         })
     })
 </script>
@@ -45,11 +48,13 @@
     input {
         height: 25px;
     }
-    #button{
-        background-color:sandybrown;
+
+    #button {
+        background-color: sandybrown;
         height: 35px;
     }
-    #websocket{
+
+    #websocket {
         font-size: 10px;
     }
 </style>

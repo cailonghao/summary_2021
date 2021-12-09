@@ -1,0 +1,4 @@
+server:
+  port: 55000
+im:
+  port: 11000
