@@ -15,8 +15,10 @@
 
 </div>
 <div id="send">
-    <input name="" msg>
-    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F43%2F07%2F59e4ba6a5a855_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641623236&t=293b61f2710c94928f353f35e31afcda">
+    <input id="msg">
+    <div id="email">
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F43%2F07%2F59e4ba6a5a855_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641623236&t=293b61f2710c94928f353f35e31afcda">
+    </div>
 </div>
 </body>
 <script th:inline="javascript">
@@ -46,6 +48,17 @@
                 console.log(error);
             }
         }
+        let json = {
+            "uuid": '',
+            "msg": '',
+            "userId": "",
+            "accept": "",
+            "msg": $("#msg").val(),
+            "type": '1',
+        }
+        $("#email").click(function () {
+            ws.send()
+        })
     })
 
 </script>
