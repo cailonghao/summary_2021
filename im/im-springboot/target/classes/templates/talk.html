@@ -5,19 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<div style="font-size: 8px">服务器端口是--->
-    <div th:text="${port}"></div>
-    websocket端口是--->
-    <div th:text="${imPort}"></div>
-</div>
 <div id="app">
     <el-container>
-        <el-header>XT聊天室</el-header>
+        <el-header>XT聊天室 服务器端口:{{port}} 聊天端口:{{imPort}} uuid:{{uuid}} userId:{{userId}}</el-header>
         <el-container>
             <el-aside style="border-right: lightskyblue solid 1px;width: 150px">
                 <div>
                     <el-divider></el-divider>
-                    <div v-for="i in userList">
+                    <div v-for="i in userList" @click="accept=i">
                         <span>{{i}}</span>
                         <el-divider></el-divider>
                     </div>
@@ -30,8 +25,9 @@
                 <div style="width: 400px;">
 
                     <p>
-                        <el-input style="width: 350px;margin-right: 10px" v-model="input" placeholder="请输入内容"></el-input>
-                        <i class="el-icon-s-promotion"></i>
+                        <el-input style="width: 350px;margin-right: 10px" v-model="msg"
+                                  placeholder="请输入内容"></el-input>
+                        <i class="el-icon-s-promotion" @click="send"></i>
                     </p>
                 </div>
             </el-main>
@@ -43,19 +39,66 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
+    let query = window.location.search.substring(1)
+    console.log(query)
+    let uuid = query.split("&")[0].split("=")[1]
+    let userId = query.split("&")[1].split("=")[1]
+    let port = [[${port}]]
+    let imPort = [[${imPort}]]
     new Vue({
         el: '#app',
         data: function () {
             return {
+                path: "ws://localhost:" + imPort + "/ws",
+                socket: "",
                 visible: false,
                 count: 0,
-                userList: ["tom", "cat", "jerry", "panda", "timo"]
+                userList: ["tom", "cat", "jerry", "panda", "timo"],
+                imPort: imPort,
+                port: port,
+                uuid: uuid,
+                userId: userId,
+                msg: '',
+                accept: ""
             }
         },
+        mounted() {
+            console.log("welcome to xt chat room")
+            this.init()
+        },
         methods: {
-            load() {
-                this.count += 2
+            init() {
+                this.socket = new WebSocket(this.path)
+                this.socket.onopen = this.open
+                this.socket.onerror = this.error
+                this.socket.onmessage = this.getMessage
+            },
+            open: function () {
+                console.log("socket连接成功")
+            },
+            error: function () {
+                console.log("连接错误")
+            },
+            getMessage: function (msg) {
+                console.log(msg.data)
+            },
+            send: function () {
+                let json = {
+                    "uuid": this.uuid,
+                    "userId": this.userId,
+                    "accept": this.accept,
+                    "msg": this.msg,
+                    "type": '1',
+                }
+                this.socket.send(JSON.stringify(json))
+            },
+            close: function () {
+                console.log("socket已经关闭")
             }
+        },
+        destroyed() {
+            // 销毁监听
+            this.socket.onclose = this.close
         }
     })
 </script>
@@ -89,13 +132,7 @@
 <!--                console.log(error);-->
 <!--            }-->
 <!--        }-->
-<!--        let json = {-->
-<!--            "uuid": uuid,-->
-<!--            "userId": userId,-->
-<!--            "accept": "",-->
-<!--            "msg": $("#msg").val(),-->
-<!--            "type": '1',-->
-<!--        }-->
+
 <!--        $("#email").click(function () {-->
 <!--            ws.send()-->
 <!--        })-->
