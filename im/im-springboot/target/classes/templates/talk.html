@@ -12,7 +12,7 @@
             <el-aside style="border-right: lightskyblue solid 1px;width: 150px">
                 <div>
                     <el-divider></el-divider>
-                    <div v-for="i in userList" @click="accept=i">
+                    <div v-for="(i in userList" @click="checkUser(i)" :style="{backgroundColor:selectBg(i)}">
                         <span>{{i}}</span>
                         <el-divider></el-divider>
                     </div>
@@ -20,7 +20,7 @@
             </el-aside>
             <el-main>
                 <div style="background-color: aqua;width: 400px;height: 300px">
-
+                    <p style="font-size: 5px" v-for="t in msgContent">{{t}}</p>
                 </div>
                 <div style="width: 400px;">
 
@@ -59,7 +59,9 @@
                 uuid: uuid,
                 userId: userId,
                 msg: '',
-                accept: ""
+                accept: "",
+                isCheck: '',
+                msgContent: []
             }
         },
         mounted() {
@@ -67,6 +69,21 @@
             this.init()
         },
         methods: {
+            selectBg(i) {
+                if (i == this.accept) {
+                    return "red"
+                } else {
+                    return "white"
+                }
+            },
+            getTime() {
+                let d = new Date();
+                return d.getFullYear() + ":" + d.getMonth()+1 + ":" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ':' + d.getSeconds()
+            },
+            checkUser(user) {
+                this.accept = user
+                this.msgContent.push(this.getTime() + "//欢迎来到" + this.accept + "聊天室")
+            },
             init() {
                 this.socket = new WebSocket(this.path)
                 this.socket.onopen = this.open
@@ -83,6 +100,14 @@
                 console.log(msg.data)
             },
             send: function () {
+                if (!this.accept) {
+                    this.$message.error("请选择用户")
+                    return
+                }
+                if (!this.msg) {
+                    this.$message.error("请输入信息")
+                    return;
+                }
                 let json = {
                     "uuid": this.uuid,
                     "userId": this.userId,
@@ -91,6 +116,10 @@
                     "type": '1',
                 }
                 this.socket.send(JSON.stringify(json))
+                let text = this.getTime() + "//" + this.userId + "//" + this.msg
+                this.msgContent.push(text)
+                this.msg = ""
+
             },
             close: function () {
                 console.log("socket已经关闭")
@@ -102,6 +131,15 @@
         }
     })
 </script>
+<style>
+    .bgOne {
+        background-color: red;
+    }
+
+    .bgTwo {
+        background-color: green;
+    }
+</style>
 <!--    let query = window.location.search.substring(1);-->
 <!--    console.log(query)-->
 <!--    let uuid = query.split("&")[0].split("=")[1]-->
