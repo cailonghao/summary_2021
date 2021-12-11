@@ -1,28 +1,58 @@
 package com.im.server.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.im.server.config.RedisConfig;
 import com.im.server.constant.RedisConstant;
+import com.im.server.dto.ChatDto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.Jedis;
 
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RestController
 @RequestMapping("/index")
 public class IndexController {
 
+    @Value("${server.port}")
+    private Integer port;
 
     @RequestMapping("/getUuid")
-    public String getUuid(@RequestParam String username,
-                          @RequestParam String password) {
+    public ChatDto getUuid(@RequestParam String username,
+                           @RequestParam String password) throws JsonProcessingException {
         log.info("username = {} ,password = {}", username, password);
-        Jedis jedis = RedisConfig.jedisPool.getResource();
-        String uuid = UUID.randomUUID().toString();
-        jedis.sadd(RedisConstant.imLoginSet, uuid);
-        return uuid;
+        String hash = String.valueOf((username + password + port).hashCode());
+        ChatDto dto = new ChatDto();
+        dto.setUuid(hash);
+        dto.setUserId(username);
+        ObjectMapper mapper = new ObjectMapper();
+        Jedis jedis = RedisConfig.getJedis();
+        jedis.sadd(RedisConstant.imLoginSet, mapper.writeValueAsString(dto));
+        RedisConfig.returnResource(jedis);
+
+        return dto;
     }
+
+    @RequestMapping("/getList")
+    public List<ChatDto> getList() {
+        Jedis jedis = RedisConfig.getJedis();
+        Set<String> list = jedis.smembers(RedisConstant.imLoginSet);
+        List<ChatDto> temp = new ArrayList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        list.forEach(e -> {
+            ChatDto chatDto = mapper.convertValue(e, ChatDto.class);
+            temp.add(chatDto);
+        });
+        RedisConfig.returnResource(jedis);
+        return temp;
+    }
+
+
 }

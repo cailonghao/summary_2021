@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 </head>
 <body>
 <div style="font-size: 8px">服务器端口是--->
@@ -11,61 +10,95 @@
     websocket端口是--->
     <div th:text="${imPort}"></div>
 </div>
-<div id="message">
+<div id="app">
+    <el-container>
+        <el-header>XT聊天室</el-header>
+        <el-container>
+            <el-aside style="border-right: lightskyblue solid 1px;width: 150px">
+                <div>
+                    <el-divider></el-divider>
+                    <div v-for="i in userList">
+                        <span>{{i}}</span>
+                        <el-divider></el-divider>
+                    </div>
+                </div>
+            </el-aside>
+            <el-main>
+                <div style="background-color: aqua;width: 400px;height: 300px">
 
-</div>
-<div id="send">
-    <input name="" msg>
-    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F43%2F07%2F59e4ba6a5a855_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641623236&t=293b61f2710c94928f353f35e31afcda">
+                </div>
+                <div style="width: 400px;">
+
+                    <p>
+                        <el-input style="width: 350px;margin-right: 10px" v-model="input" placeholder="请输入内容"></el-input>
+                        <i class="el-icon-s-promotion"></i>
+                    </p>
+                </div>
+            </el-main>
+        </el-container>
+    </el-container>
 </div>
 </body>
-<script th:inline="javascript">
-    let port = [[${port}]];
-    let imPort = [[${imPort}]];
-    console.log(port, imPort)
-    $(document).ready(function () {
-        let url = "ws://localhost:" + imPort + "/ws"
-        let ws = new WebSocket(url);
-        if (ws) {
-            ws.onopen = function () {
-                //当WebSocket创建成功时，触发onopen事件
-                alert("链接成功")
-                //ws.send(JSON.stringify(firstMsg)); //将消息发送到服务端
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible: false,
+                count: 0,
+                userList: ["tom", "cat", "jerry", "panda", "timo"]
             }
-            ws.onmessage = function (e) {
-                //当客户端收到服务端发来的消息时，触发onmessage事件，参数e.data包含server传递过来的数据
-                console.log(e.data)
-                $("#body").append("<div style='font-size: 8px'>" + e.data + "</div>")
-            }
-            ws.onclose = function (e) {
-                //当客户端收到服务端发送的关闭连接请求时，触发onclose事件
-                console.log("close");
-            }
-            ws.onerror = function (e) {
-                //如果出现连接、处理、接收、发送数据失败的时候触发onerror事件
-                console.log(error);
+        },
+        methods: {
+            load() {
+                this.count += 2
             }
         }
     })
-
 </script>
-<style>
-    #message {
-        height: 300px;
-        width: 400px;
-        background-color: burlywood;
-    }
+<!--    let query = window.location.search.substring(1);-->
+<!--    console.log(query)-->
+<!--    let uuid = query.split("&")[0].split("=")[1]-->
+<!--    let userId = query.split("&")[1].split("=")[1]-->
+<!--    let port = [[${port}]];-->
+<!--    let imPort = [[${imPort}]];-->
+<!--    console.log(port, imPort)-->
+<!--    $(document).ready(function () {-->
+<!--        let url = "ws://localhost:" + imPort + "/ws"-->
+<!--        let ws = new WebSocket(url);-->
+<!--        if (ws) {-->
+<!--            ws.onopen = function () {-->
+<!--                //当WebSocket创建成功时，触发onopen事件-->
+<!--                alert("链接成功")-->
+<!--                //ws.send(JSON.stringify(firstMsg)); //将消息发送到服务端-->
+<!--            }-->
+<!--            ws.onmessage = function (e) {-->
+<!--                //当客户端收到服务端发来的消息时，触发onmessage事件，参数e.data包含server传递过来的数据-->
+<!--                console.log(e.data)-->
+<!--                $("#body").append("<div style='font-size: 8px'>" + e.data + "</div>")-->
+<!--            }-->
+<!--            ws.onclose = function (e) {-->
+<!--                //当客户端收到服务端发送的关闭连接请求时，触发onclose事件-->
+<!--                console.log("close");-->
+<!--            }-->
+<!--            ws.onerror = function (e) {-->
+<!--                //如果出现连接、处理、接收、发送数据失败的时候触发onerror事件-->
+<!--                console.log(error);-->
+<!--            }-->
+<!--        }-->
+<!--        let json = {-->
+<!--            "uuid": uuid,-->
+<!--            "userId": userId,-->
+<!--            "accept": "",-->
+<!--            "msg": $("#msg").val(),-->
+<!--            "type": '1',-->
+<!--        }-->
+<!--        $("#email").click(function () {-->
+<!--            ws.send()-->
+<!--        })-->
+<!--    })-->
 
-    input {
-        height: 30px;
-        width: 250px;
-        border: none;
-        border-bottom: 1px solid #000
-    }
-
-    img {
-        width: 50px;
-    }
-
-</style>
 </html>

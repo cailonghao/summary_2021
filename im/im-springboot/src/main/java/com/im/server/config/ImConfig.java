@@ -1,12 +1,17 @@
 package com.im.server.config;
 
+import com.im.server.constant.RedisConstant;
+import com.im.server.service.JedisPubsub;
 import com.im.server.service.WebsocketInitialier;
+import com.im.server.util.BeansUtils;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPubSub;
 
 import java.net.InetSocketAddress;
 
@@ -25,6 +30,7 @@ public class ImConfig {
 
 
     public void initIm(String port) {
+        pubsub();
         log.info("im server listen {} ......", port);
         ServerBootstrap bootstrap = new ServerBootstrap();
         EventLoopGroup boss = new NioEventLoopGroup();
@@ -42,5 +48,12 @@ public class ImConfig {
             boss.shutdownGracefully();
             work.shutdownGracefully();
         }
+    }
+
+    void pubsub() {
+        log.info("订阅 {} 频道", RedisConstant.xtchatChannel);
+        Jedis jedis = RedisConfig.getJedis();
+        jedis.subscribe(new JedisPubsub(), RedisConstant.xtchatChannel);
+        RedisConfig.returnResource(jedis);
     }
 }

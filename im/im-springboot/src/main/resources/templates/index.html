@@ -8,8 +8,8 @@
 <body>
 <div id="body">
     <div th:text="${port}" style="font-size: 8px"></div>
-    <div><strong>账 户:</strong><input value="" name="username"></div>
-    <div><strong>密 码:</strong><input value="" name="username"></div>
+    <div><strong>账 户:</strong><input id="username" value="tom" name="username"></div>
+    <div><strong>密 码:</strong><input id="password" value="123456" name="password"></div>
     <div id="button">登录</div>
     <div id="websocket"></div>
 </div>
@@ -23,10 +23,13 @@
             $("#websocket").text("您的浏览器不支持WebSocket")
         }
         $("#button").click(function () {
-            $.post("",function (res){
-
+            $.post("/index/getUuid", {
+                "username": $("#username").val(),
+                "password": $("#password").val()
+            }, function (res) {
+                console.log(res)
+                window.location.href = "/page/talk?uuid="+res.uuid+"&userId="+res.userId;
             })
-            window.location.href = "/page/talk";
         })
     })
 </script>
