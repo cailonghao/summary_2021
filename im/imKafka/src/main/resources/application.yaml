@@ -1,0 +1,6 @@
+server:
+  port: 21000
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: 1.13.253.101:9092
