@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.im.server.config.RedisConfig;
 import com.im.server.constant.RedisConstant;
 import com.im.server.dto.ChatDto;
+import com.im.server.util.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,14 +30,9 @@ public class IndexController {
                            @RequestParam String password) throws JsonProcessingException {
         log.info("username = {} ,password = {}", username, password);
         String hash = String.valueOf((username + password + port).hashCode());
-        ChatDto dto = new ChatDto();
-        dto.setUuid(hash);
-        dto.setUserId(username);
+        ChatDto dto = new ChatDto(hash,username);
         ObjectMapper mapper = new ObjectMapper();
-        Jedis jedis = RedisConfig.getJedis();
-        jedis.sadd(RedisConstant.imLoginSet, mapper.writeValueAsString(dto));
-        RedisConfig.returnResource(jedis);
-
+        RedisUtil.cacheUserLogin(hash);
         return dto;
     }
 
