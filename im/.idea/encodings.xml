@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/im-springboot/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imClient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imKafka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imServer/src/main/java" charset="UTF-8" />
   </component>
 </project>

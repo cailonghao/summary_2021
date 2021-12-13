@@ -10,6 +10,7 @@
         <module name="imClient" />
         <module name="im-springboot" />
         <module name="imServer" />
+        <module name="imKafka" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="im-springboot" options="-parameters" />
       <module name="imClient" options="-parameters" />
+      <module name="imKafka" options="-parameters" />
       <module name="imServer" options="-parameters" />
     </option>
   </component>

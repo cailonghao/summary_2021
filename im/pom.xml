@@ -12,6 +12,7 @@
         <module>imServer</module>
         <module>imClient</module>
         <module>im-springboot</module>
+        <module>imKafka</module>
     </modules>
 
     <parent>
