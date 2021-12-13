@@ -1,0 +1,11 @@
+spring:
+  kafka:
+    bootstrap-servers: 1.13.253.101:9092
+    consumer:
+      group-id: boot-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+server:
+  port: 22000
