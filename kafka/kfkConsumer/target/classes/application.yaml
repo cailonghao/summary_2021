@@ -1,6 +1,9 @@
 spring:
   kafka:
     bootstrap-servers: 1.13.253.101:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
       group-id: boot-group
       auto-offset-reset: earliest

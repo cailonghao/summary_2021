@@ -5,6 +5,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.security.auth.callback.Callback;
+
 @RestController
 @RequestMapping("/index")
 public class IndexController {
@@ -15,7 +17,7 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String index() {
-        template.send("topic1", "test");
+        template.send("topic1", "test", Callback.class);
         return "ok";
     }
 }
