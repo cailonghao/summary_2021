@@ -11,13 +11,15 @@ import javax.security.auth.callback.Callback;
 @RequestMapping("/index")
 public class IndexController {
 
-
     @Autowired
     private KafkaTemplate<String, String> template;
 
     @RequestMapping("/index")
     public String index() {
-        template.send("topic1", "test", Callback.class);
+        template.send("topic1", "test");
         return "ok";
     }
+
+
+
 }

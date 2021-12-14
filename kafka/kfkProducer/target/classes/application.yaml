@@ -4,6 +4,9 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      compression-type: gzip #压缩算法
+      acks: all #所有副本确认
+      retries: 2 #重试次数
     consumer:
       group-id: boot-group
       auto-offset-reset: earliest

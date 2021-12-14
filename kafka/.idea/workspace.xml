@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93fd746c-d235-4260-b795-fcfe818cdb60" name="Changes" comment="" />
+    <list default="true" id="93fd746c-d235-4260-b795-fcfe818cdb60" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/../cloudShop/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cloudShop/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cloudShop/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cloudShop/cloudShop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kfkProducer/src/main/java/com/kfk/producer/index/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kfkProducer/src/main/java/com/kfk/producer/index/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kfkProducer/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kfkProducer/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kfkProducer/target/classes/com/kfk/producer/index/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kfkProducer/target/classes/com/kfk/producer/index/IndexController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,9 +38,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../install/apache-maven-3.8.2" />
-        <option name="userSettingsFile" value="D:\install\apache-maven-3.8.2\conf\settings.xml" />
+        <option name="localRepository" value="C:\work\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../work/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="C:\work\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -43,16 +58,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../androidSdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../cloud/spaceXX" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -71,7 +90,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProducerApp">
+  <component name="RunManager" selected="Spring Boot.ConsumerApp">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConsumerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="kfkConsumer" />
       <extension name="coverage">
@@ -120,10 +150,22 @@
       <workItem from="1639374856917" duration="768000" />
       <workItem from="1639379227293" duration="8922000" />
       <workItem from="1639444919752" duration="4544000" />
+      <workItem from="1639484876767" duration="4758000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
