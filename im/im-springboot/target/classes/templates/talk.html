@@ -20,7 +20,7 @@
             </el-aside>
             <el-main>
                 <div style="background-color: aqua;width: 400px;height: 300px">
-                    <p style="font-size: 5px" v-for="t in msgContent">{{t}}</p>
+                    <p style="font-size: 3px" v-for="t in msgContent">{{t}}</p>
                 </div>
                 <div style="width: 400px;">
 
@@ -78,11 +78,13 @@
             },
             getTime() {
                 let d = new Date();
-                return d.getFullYear() + ":" + d.getMonth()+1 + ":" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ':' + d.getSeconds()
+                return d.getFullYear() + ":" + d.getMonth() + 1 + ":" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ':' + d.getSeconds()
             },
             checkUser(user) {
                 this.accept = user
-                this.msgContent.push(this.getTime() + "//欢迎来到" + this.accept + "聊天室")
+                this.msgContent = []
+                this.msgContent.push("系统: 欢迎来到" + this.accept + "聊天室")
+                this.socket.send(this.getJson(1, "history0"))
             },
             init() {
                 this.socket = new WebSocket(this.path)
@@ -92,12 +94,18 @@
             },
             open: function () {
                 console.log("socket连接成功")
+                this.socket.send(this.getJson(1, "login"))
             },
             error: function () {
                 console.log("连接错误")
             },
-            getMessage: function (msg) {
-                console.log(msg.data)
+            getMessage: function (param) {
+                console.log(param.data)
+                let json = JSON.parse(param.data)
+                json.forEach(e => {
+                    let text = e.userId + ": " + e.msg
+                    this.msgContent.push(text)
+                })
             },
             send: function () {
                 if (!this.accept) {
@@ -108,21 +116,25 @@
                     this.$message.error("请输入信息")
                     return;
                 }
+                this.socket.send(this.getJson(2, ""))
+                let text = this.userId + ": " + this.msg
+                this.msgContent.push(text)
+                this.msg = ""
+            },
+            close: function () {
+                console.log("socket已经关闭")
+            },
+            getJson(type, directive) {
                 let json = {
+                    "ok": false,
                     "uuid": this.uuid,
                     "userId": this.userId,
                     "accept": this.accept,
                     "msg": this.msg,
-                    "type": '1',
+                    "directive": directive, //open-登录 history-选择聊天
+                    "type": type, //指令 2 文字 3 图片 4 链接 5文件
                 }
-                this.socket.send(JSON.stringify(json))
-                let text = this.getTime() + "//" + this.userId + "//" + this.msg
-                this.msgContent.push(text)
-                this.msg = ""
-
-            },
-            close: function () {
-                console.log("socket已经关闭")
+                return JSON.stringify(json);
             }
         },
         destroyed() {

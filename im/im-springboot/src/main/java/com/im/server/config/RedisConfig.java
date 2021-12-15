@@ -13,16 +13,16 @@ public class RedisConfig {
 
     static {
         GenericObjectPoolConfig<Jedis> config = new GenericObjectPoolConfig<>();
-        config.setMaxTotal(5);
-        config.setMaxIdle(5);
-        config.setMinIdle(3);
+        config.setMaxTotal(100);
+        config.setMaxIdle(20);
+        config.setMinIdle(10);
         config.setJmxEnabled(true);
+        config.setTestOnBorrow(true);
         config.setMaxWaitMillis(5000);
         jedisPool = new JedisPool(config, "1.13.253.101", 6379, 5000, "123456");
     }
 
     public static Jedis getJedis() {
-
         return jedisPool.getResource();
     }
 

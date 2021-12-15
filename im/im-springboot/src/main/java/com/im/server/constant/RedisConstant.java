@@ -10,4 +10,5 @@ public interface RedisConstant {
      * 发布 -订阅频道
      */
     String xtchatChannel = "xt:im:channel";
+
 }
