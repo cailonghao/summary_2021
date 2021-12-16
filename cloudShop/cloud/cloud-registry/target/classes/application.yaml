@@ -1,0 +1,19 @@
+server:
+  port: 20000
+spring:
+  application:
+    name: ms-registry
+  profiles:
+    active: dev
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/

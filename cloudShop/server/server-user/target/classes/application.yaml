@@ -1,0 +1,14 @@
+server:
+  port: 22000
+spring:
+  application:
+    name: ms-user
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:20000/eureka/
