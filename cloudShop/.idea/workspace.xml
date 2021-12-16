@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd4638a-10e7-4eca-bfb8-978e494c87d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/server-user/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/cloud-registry/src/main/java/com/ms/registry/RegistryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/cloud-registry/src/main/java/com/ms/registry/RegistryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/cloud-registry/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/cloud-registry/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server-user/src/main/java/com/server/user/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/server-user/src/main/java/com/server/user/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server-user/target/classes/com/server/user/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/server-user/target/classes/com/server/user/controller/IndexController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +34,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="C:\work\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../work/apache-maven-3.8.1" />
-        <option name="userSettingsFile" value="C:\work\apache-maven-3.8.1\conf\settings.xml" />
+        <option name="localRepository" value="D:\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../install/apache-maven-3.8.2" />
+        <option name="userSettingsFile" value="D:\install\apache-maven-3.8.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -57,7 +57,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/server-user/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -72,7 +75,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApplication">
+  <component name="RunManager" selected="Spring Boot.RegistryApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -128,8 +131,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OrderApplication" />
-        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.RegistryApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +146,11 @@
       <updated>1639499912851</updated>
       <workItem from="1639499914312" duration="1259000" />
       <workItem from="1639578967058" duration="2970000" />
+      <workItem from="1639617420468" duration="626000" />
+      <workItem from="1639618070030" duration="249000" />
+      <workItem from="1639620955299" duration="5130000" />
+      <workItem from="1639626466184" duration="1201000" />
+      <workItem from="1639627694676" duration="1030000" />
     </task>
     <servers />
   </component>
