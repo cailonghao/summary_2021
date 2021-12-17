@@ -7,6 +7,11 @@ spring:
       compression-type: gzip #压缩算法
       acks: all #所有副本确认
       retries: 2 #重试次数
+      properties:
+        interceptor:
+          classes: com.kfk.producer.interceptor.KmsgInterceptor
+        enable:
+          idempotence: true #幂等性
     consumer:
       group-id: boot-group
       auto-offset-reset: earliest

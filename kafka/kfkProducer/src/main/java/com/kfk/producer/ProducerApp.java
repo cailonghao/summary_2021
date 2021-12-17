@@ -1,5 +1,6 @@
 package com.kfk.producer;
 
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ import java.util.concurrent.ScheduledExecutorService;
 public class ProducerApp {
 
     public static void main(String[] args) {
+
         SpringApplication.run(ProducerApp.class,args);
     }
 }

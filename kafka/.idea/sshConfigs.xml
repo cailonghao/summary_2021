@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="1.13.253.101" id="5a2fd0f6-2d1d-4860-a3e4-bd669434fa76" keyPath="C:\work\ssh\clh.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig host="1.13.253.101" id="5a2fd0f6-2d1d-4860-a3e4-bd669434fa76" keyPath="D:\secret\clh.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
     </configs>
   </component>
 </project>
