@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bd4638a-10e7-4eca-bfb8-978e494c87d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/server-user/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/cloud-registry/src/main/java/com/ms/registry/RegistryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/cloud-registry/src/main/java/com/ms/registry/RegistryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/cloud-registry/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/cloud-registry/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,19 +67,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UserApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="server-order" />
       <extension name="coverage">
@@ -143,6 +124,7 @@
       <updated>1639499912851</updated>
       <workItem from="1639499914312" duration="1259000" />
       <workItem from="1639578967058" duration="2970000" />
+      <workItem from="1639835036483" duration="99000" />
     </task>
     <servers />
   </component>
