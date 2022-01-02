@@ -1,11 +1,10 @@
-package com.kfk.producer.index;
+package com.kfk.producer.controller;
 
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.security.auth.callback.Callback;
 
 @RestController
 @RequestMapping("/index")
