@@ -1,0 +1,11 @@
+2021-12-21 17:13:44.146 |  INFO | 9380 | [main] | com.kfk.producer.ProducerApp             | Starting ProducerApp on PC-20210831YXOK with PID 9380 (D:\source\longhao\summary_2021\kafka\kfkProducer\target\classes started by Administrator in D:\source\longhao\summary_2021\kafka)
+2021-12-21 17:13:44.147 |  INFO | 9380 | [main] | com.kfk.producer.ProducerApp             | No active profile set, falling back to default profiles: default
+2021-12-21 17:13:44.657 |  INFO | 9380 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat initialized with port(s): 23000 (http)
+2021-12-21 17:13:44.663 |  INFO | 9380 | [main] | o.apache.catalina.core.StandardService   | Starting service [Tomcat]
+2021-12-21 17:13:44.664 |  INFO | 9380 | [main] | org.apache.catalina.core.StandardEngine  | Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-21 17:13:44.712 |  INFO | 9380 | [main] | o.a.c.c.C.[Tomcat].[localhost].[/]       | Initializing Spring embedded WebApplicationContext
+2021-12-21 17:13:44.713 |  INFO | 9380 | [main] | w.s.c.ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 541 ms
+2021-12-21 17:13:44.832 |  INFO | 9380 | [main] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 17:13:44.943 |  INFO | 9380 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat started on port(s): 23000 (http) with context path ''
+2021-12-21 17:13:44.950 |  INFO | 9380 | [main] | com.kfk.producer.ProducerApp             | Started ProducerApp in 1.087 seconds (JVM running for 1.559)
+2021-12-21 17:14:39.170 |  INFO | 9380 | [SpringContextShutdownHook] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Shutting down ExecutorService 'applicationTaskExecutor'

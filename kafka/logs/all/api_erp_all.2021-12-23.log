@@ -1,0 +1,115 @@
+2021-12-23 13:07:20.130 |  INFO | 10440 | [main] | com.kfk.producer.ProducerApp             | Starting ProducerApp on PC-20210831YXOK with PID 10440 (D:\source\longhao\summary_2021\kafka\kfkProducer\target\classes started by Administrator in D:\source\longhao\summary_2021\kafka)
+2021-12-23 13:07:20.132 |  INFO | 10440 | [main] | com.kfk.producer.ProducerApp             | No active profile set, falling back to default profiles: default
+2021-12-23 13:07:21.218 |  INFO | 10440 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat initialized with port(s): 23000 (http)
+2021-12-23 13:07:21.230 |  INFO | 10440 | [main] | o.apache.catalina.core.StandardService   | Starting service [Tomcat]
+2021-12-23 13:07:21.231 |  INFO | 10440 | [main] | org.apache.catalina.core.StandardEngine  | Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-23 13:07:21.319 |  INFO | 10440 | [main] | o.a.c.c.C.[Tomcat].[localhost].[/]       | Initializing Spring embedded WebApplicationContext
+2021-12-23 13:07:21.320 |  INFO | 10440 | [main] | w.s.c.ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1139 ms
+2021-12-23 13:07:21.520 |  INFO | 10440 | [main] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-23 13:07:21.704 |  WARN | 10440 | [main] | ConfigServletWebServerApplicationContext | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 23000 is already in use
+2021-12-23 13:07:21.705 |  INFO | 10440 | [main] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-23 13:07:21.708 |  INFO | 10440 | [main] | o.apache.catalina.core.StandardService   | Stopping service [Tomcat]
+2021-12-23 13:07:21.720 |  INFO | 10440 | [main] | ConditionEvaluationReportLoggingListener | 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-23 13:07:21.725 | ERROR | 10440 | [main] | o.s.b.d.LoggingFailureAnalysisReporter   | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 23000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 23000 or configure this application to listen on another port.
+
+2021-12-23 13:07:43.712 |  INFO | 5868 | [main] | com.kfk.producer.ProducerApp             | Starting ProducerApp on PC-20210831YXOK with PID 5868 (D:\source\longhao\summary_2021\kafka\kfkProducer\target\classes started by Administrator in D:\source\longhao\summary_2021\kafka)
+2021-12-23 13:07:43.715 |  INFO | 5868 | [main] | com.kfk.producer.ProducerApp             | No active profile set, falling back to default profiles: default
+2021-12-23 13:07:44.862 |  INFO | 5868 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat initialized with port(s): 24000 (http)
+2021-12-23 13:07:44.873 |  INFO | 5868 | [main] | o.apache.catalina.core.StandardService   | Starting service [Tomcat]
+2021-12-23 13:07:44.874 |  INFO | 5868 | [main] | org.apache.catalina.core.StandardEngine  | Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-23 13:07:44.957 |  INFO | 5868 | [main] | o.a.c.c.C.[Tomcat].[localhost].[/]       | Initializing Spring embedded WebApplicationContext
+2021-12-23 13:07:44.957 |  INFO | 5868 | [main] | w.s.c.ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1175 ms
+2021-12-23 13:07:45.220 |  INFO | 5868 | [main] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-23 13:07:45.430 |  INFO | 5868 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat started on port(s): 24000 (http) with context path ''
+2021-12-23 13:07:45.444 |  INFO | 5868 | [main] | com.kfk.producer.ProducerApp             | Started ProducerApp in 2.361 seconds (JVM running for 3.08)
+2021-12-23 13:08:27.083 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.c.c.C.[Tomcat].[localhost].[/]       | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-23 13:08:27.084 |  INFO | 5868 | [http-nio-24000-exec-2] | o.s.web.servlet.DispatcherServlet        | Initializing Servlet 'dispatcherServlet'
+2021-12-23 13:08:27.089 |  INFO | 5868 | [http-nio-24000-exec-2] | o.s.web.servlet.DispatcherServlet        | Completed initialization in 5 ms
+2021-12-23 13:08:27.119 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.k.clients.producer.ProducerConfig    | ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [192.168.242.131:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = producer-1
+	compression.type = gzip
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = [com.kfk.producer.interceptor.KmsgInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.IntegerSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2021-12-23 13:08:27.133 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.k.clients.producer.KafkaProducer     | [Producer clientId=producer-1] Instantiated an idempotent producer.
+2021-12-23 13:08:27.160 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.kafka.common.utils.AppInfoParser     | Kafka version: 2.5.1
+2021-12-23 13:08:27.161 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.kafka.common.utils.AppInfoParser     | Kafka commitId: 0efa8fb0f4c73d92
+2021-12-23 13:08:27.161 |  INFO | 5868 | [http-nio-24000-exec-2] | o.a.kafka.common.utils.AppInfoParser     | Kafka startTimeMs: 1640236107159
+2021-12-23 13:08:27.419 |  INFO | 5868 | [kafka-producer-network-thread | producer-1] | org.apache.kafka.clients.Metadata        | [Producer clientId=producer-1] Cluster ID: RAZe0eVhTfa7tVl3mNW2iA
+2021-12-23 13:08:27.420 |  INFO | 5868 | [kafka-producer-network-thread | producer-1] | o.a.k.c.p.internals.TransactionManager   | [Producer clientId=producer-1] ProducerId set to 1 with epoch 0
+2021-12-23 13:57:20.300 |  INFO | 5868 | [SpringContextShutdownHook] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-23 13:57:20.313 |  INFO | 5868 | [SpringContextShutdownHook] | o.a.k.clients.producer.KafkaProducer     | [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.

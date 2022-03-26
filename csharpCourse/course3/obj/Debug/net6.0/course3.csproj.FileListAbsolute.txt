@@ -1,0 +1,15 @@
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\course3.exe
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\course3.deps.json
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\course3.runtimeconfig.json
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\course3.dll
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\ref\course3.dll
+D:\source\longhao\summary_2021\csharpCourse\course3\bin\Debug\net6.0\course3.pdb
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.csproj.AssemblyReference.cache
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.AssemblyInfoInputs.cache
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.AssemblyInfo.cs
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.csproj.CoreCompileInputs.cache
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.dll
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\ref\course3.dll
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.pdb
+D:\source\longhao\summary_2021\csharpCourse\course3\obj\Debug\net6.0\course3.genruntimeconfig.cache

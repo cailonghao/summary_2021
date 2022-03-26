@@ -10,4 +10,6 @@ nohup bin/kafka-server-start.sh config/server.properties > b.txt &
 
 ./kafka-server-start.sh -daemon ../config/server.properties
 
+#
+nohup ./filebeat -c app.yml >> app.log & 
 

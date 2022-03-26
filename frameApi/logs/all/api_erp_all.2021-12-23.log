@@ -1,0 +1,64 @@
+>>>2021-12-23 17:00:09.291 |  INFO | 9720 | [main] | com.frame.kafka.KafkaStart               | Starting KafkaStart on PC-20210831YXOK with PID 9720 (D:\source\longhao\summary_2021\frameApi\frameKafka\target\classes started by Administrator in D:\source\longhao\summary_2021\frameApi)
+>>>2021-12-23 17:00:09.297 |  INFO | 9720 | [main] | com.frame.kafka.KafkaStart               | No active profile set, falling back to default profiles: default
+>>>2021-12-23 17:00:10.198 |  INFO | 9720 | [main] | o.a.k.clients.admin.AdminClientConfig    | AdminClientConfig values: 
+	bootstrap.servers = [192.168.242.131:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+>>>2021-12-23 17:00:10.300 |  INFO | 9720 | [main] | o.a.kafka.common.utils.AppInfoParser     | Kafka version: 2.5.1
+>>>2021-12-23 17:00:10.302 |  INFO | 9720 | [main] | o.a.kafka.common.utils.AppInfoParser     | Kafka commitId: 0efa8fb0f4c73d92
+>>>2021-12-23 17:00:10.302 |  INFO | 9720 | [main] | o.a.kafka.common.utils.AppInfoParser     | Kafka startTimeMs: 1640250010299
+>>>2021-12-23 17:00:10.860 |  INFO | 9720 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat initialized with port(s): 23000 (http)
+>>>2021-12-23 17:00:10.877 |  INFO | 9720 | [main] | o.apache.catalina.core.StandardService   | Starting service [Tomcat]
+>>>2021-12-23 17:00:10.878 |  INFO | 9720 | [main] | org.apache.catalina.core.StandardEngine  | Starting Servlet engine: [Apache Tomcat/9.0.41]
+>>>2021-12-23 17:00:11.016 |  INFO | 9720 | [main] | o.a.c.c.C.[Tomcat].[localhost].[/]       | Initializing Spring embedded WebApplicationContext
+>>>2021-12-23 17:00:11.016 |  INFO | 9720 | [main] | w.s.c.ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1630 ms
+>>>2021-12-23 17:00:11.207 |  INFO | 9720 | [main] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Initializing ExecutorService 'applicationTaskExecutor'
+>>>2021-12-23 17:00:11.408 |  INFO | 9720 | [main] | o.s.b.w.embedded.tomcat.TomcatWebServer  | Tomcat started on port(s): 23000 (http) with context path ''
+>>>2021-12-23 17:00:11.421 |  INFO | 9720 | [main] | com.frame.kafka.KafkaStart               | Started KafkaStart in 3.058 seconds (JVM running for 3.651)
+>>>2021-12-23 17:01:43.109 |  INFO | 9720 | [SpringContextShutdownHook] | o.s.s.concurrent.ThreadPoolTaskExecutor  | Shutting down ExecutorService 'applicationTaskExecutor'

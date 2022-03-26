@@ -11,4 +11,9 @@ public class KfkListener {
     public void listen1(String msg) {
         System.out.println("topic1 ===> " + msg);
     }
+
+    @KafkaListener(id = "listen2", topics = "kft")
+    public void listen2(String msg) {
+        System.out.println("topic2 ===> " + msg);
+    }
 }

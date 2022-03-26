@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: 1.13.253.101:9092
+    bootstrap-servers: 192.168.242.131:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -19,4 +19,4 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 server:
-  port: 23000
+  port: 24000
